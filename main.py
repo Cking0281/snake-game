@@ -7,14 +7,14 @@ def main():
     screen.bgcolor("black")
     screen.title("Snake Game")
 
-    turtle_squares = []
+    snake_segments = []
     position = 0
 
-    for turtle_square in range(3):
-        turtle_square = Turtle()
-        turtle_square.shape("square")
-        turtle_square.color("white")
-        turtle_square.setposition(position, 0)
+    for snake_segment in range(3):
+        snake_segment = Turtle(shape="square")
+        snake_segment.color("white")
+        snake_segment.setposition(position, 0)
+        snake_segments.append(snake_segment)
         position -= 20
 
     still_playing = True
