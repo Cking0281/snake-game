@@ -13,9 +13,13 @@ class Scoreboard(Turtle):
         self.pendown()
 
     def display_score(self):
-        self.write(arg=f"Score: {self.score}", align="center", font=("Times New Roman", 15, "normal"))
+        self.write(f"Score: {self.score}", align="center", font=("Times New Roman", 15, "normal"))
 
     def increase_score(self, points_scored=1):
         self.score += points_scored
         self.clear()
         self.display_score()
+
+    def game_over(self):
+        self.goto(0, 0)
+        self.write("GAME OVER", align="center", font=("Comic Sans MS", 50, "bold"))

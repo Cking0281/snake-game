@@ -30,9 +30,15 @@ def main():
         time.sleep(0.1)
         snake.move()
 
+        # Detect collision with food.
         if snake.head.distance(food) < 15:
             food.refresh()
             scoreboard.increase_score()
+
+        # Detect collision with wall.
+        if snake.has_hit_wall():
+            scoreboard.game_over()
+            still_playing = False
 
     screen.exitonclick()
 
